@@ -12,8 +12,8 @@ int error(){
 int isAlt(int* sudo, int addr, int value){
 	int i = addr / 9; //所在行
 	int j = addr % 9; //所在列
-	int kj = ((addr % 9)/3)*3;//所在小三角形的左顶点列
-	int ki = (addr / 27) * 3; //所在小三角形的左顶点行
+	int kj = ((addr % 9)/3)*3;//所在小正方形的左顶点列
+	int ki = (addr / 27) * 3; //所在小正方形的左顶点行
 
 	int tmp;
 	//同一列不能有相同
@@ -31,7 +31,7 @@ int isAlt(int* sudo, int addr, int value){
 		}
 	}
 
-	//小三角形内不能有相同
+	//小正方形内不能有相同
 	for(int ii = ki; ii < ki + 3; ii++){
 		for(int jj = kj; jj < kj + 3; jj++){
 			tmp = ii*9+ jj < addr ? sudo[ii * 9 + jj]:flag[ii * 9 + jj];
