@@ -1,4 +1,4 @@
 all:
-	gcc sudoku.c -std=c99 -o sudoku
+	g++ sudoku.cpp -o sudoku
 clean:
 	rm -rf sudoku
